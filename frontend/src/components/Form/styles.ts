@@ -4,13 +4,13 @@ export const FormContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 10px;
   border-radius: 5px;
   display: flex;
   background-color: white;
-  width: 1000px;
-  height: 100px;
+  width: 1040px;
+  height: 80px;
 `;
 
 export const InputContainer = styled.div`

@@ -4,18 +4,18 @@ const Form = () => {
   return (
     <C.FormContainer>
         <C.InputContainer>
+          <label htmlFor="category">Categoria</label>
+          <C.Input type='text' id='category' />
+        </C.InputContainer>
+        
+        <C.InputContainer>
           <label htmlFor="description">Descrição</label>
           <C.Input type='text' id='description' />
         </C.InputContainer>
-        
+
         <C.InputContainer>
           <label htmlFor="value">Valor</label>
           <C.Input type='text' id='value'/>
-        </C.InputContainer>
-        
-        <C.InputContainer>
-          <label htmlFor="description">Descrição</label>
-          <C.Input type='text' id='description' />
         </C.InputContainer>
         
         <C.RadioButton type='radio' id='entry' />
