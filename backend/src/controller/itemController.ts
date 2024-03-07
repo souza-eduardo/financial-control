@@ -1,17 +1,18 @@
 import { Request, Response } from "express";
+import { AppDataSource } from "../data-source";
 import { Item } from "../entity/Item";
+import { itemRepository } from "../repositories/itemRepository";
 
-const getItem = (async (req: Request, res: Response) => {
+export class ItemController {
 
+  async getItem (req: Request, res: Response) {
+    const item = await itemRepository.find();
+    res.json(item);
+  }
   
-})
-
-const createItem = ( async (req: Request, res: Response) => {
-
+  async createItem (req: Request, res: Response) {
+    const { category, description, value, type } = req.body;
   
-})
-
-module.exports = {
-  getItem,
-  createItem
+    
+  }
 }
