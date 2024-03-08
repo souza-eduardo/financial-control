@@ -1,18 +1,30 @@
 import { Request, Response } from "express";
-import { AppDataSource } from "../data-source";
-import { Item } from "../entity/Item";
 import { itemRepository } from "../repositories/itemRepository";
 
 export class ItemController {
 
-  async getItem (req: Request, res: Response) {
-    const item = await itemRepository.find();
-    res.json(item);
+  async createItem(req: Request, res: Response) {
+    const { category, value, type } = req.body;
+
+    if (!category) return res.status(400).json('Descrição é obrigatória!');
+
+    try {
+      const newItem = itemRepository.create({category, value, type});
+      await itemRepository.save(newItem);
+      return res.status(201).json(newItem);
+    } catch (err) {
+      console.log(err);
+      return res.status(500).json({message: 'Internal Server Error'});
+    }
   }
-  
-  async createItem (req: Request, res: Response) {
-    const { category, description, value, type } = req.body;
-  
+
+  async getItem(req: Request, res: Response) {
+    try {
+      const items = await itemRepository.find();
+      return res.json(items); 
+    } catch (err) {
+      return res.status(500).json({message: 'Internal Server Error'});
+    }
     
   }
 }

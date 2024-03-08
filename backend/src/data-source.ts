@@ -1,3 +1,4 @@
+require('dotenv').config();
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { Item } from "./entity/Item";
