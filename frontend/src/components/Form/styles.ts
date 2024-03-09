@@ -24,7 +24,7 @@ export const Input = styled.input`
 `;  
 
 export const RadioButton = styled.input`
-  margin-right: -35px;
+  margin-right: -75px;
 `;
 
 export const SubmitButton = styled.button`

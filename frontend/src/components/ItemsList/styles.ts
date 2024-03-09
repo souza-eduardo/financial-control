@@ -9,14 +9,14 @@ export const Container = styled.div`
   width: 1040px;
   height: 50px;
 
-  #category {
+  .category {
     background-color: lightsalmon;
+    width:fit-content;
     padding: 5px 10px;
     border-radius: 5px;  
   }
-`;
 
-export const Item = styled.div`
-
-  
+  li {
+    list-style: none;
+  }
 `;

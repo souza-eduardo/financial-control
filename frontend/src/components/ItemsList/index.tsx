@@ -1,26 +1,26 @@
+import { useEffect, useState } from 'react';
 import * as C from './styles';
 
 const ItemsList = () => {
 
-  const items = {
-    category: 'comida', description: 'Marmita', value: 16.50, type: 'Saída'
-  }
+  const [items, setItems] = useState<any[]>([]);
+  useEffect(() => {
+    fetch('http://localhost:3000/items')
+      .then(res => res.json())
+      .then(item => setItems(item));
+    
+  }, []);
 
   return (
-    <C.Container>
-      <C.Item id='category'>
-        {items.category}
-      </C.Item>
-      <C.Item>
-        {items.description}
-      </C.Item>
-      <C.Item>
-        {items.value}
-      </C.Item>
-      <C.Item>
-        {items.type}
-      </C.Item>
-    </C.Container>
+    <>
+      {items.map((item, index) => (
+        <C.Container key={index}>
+          <li className='category'>{item.category}</li>
+          <li>{item.value}</li>
+          <li>{item.type}</li>
+        </C.Container>
+      ))}
+    </>
   )
 }
 
