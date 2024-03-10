@@ -3,7 +3,7 @@ import * as C from './styles';
 
 const Form = () => {
 
-  const [items, setItems] = useState<any[]>([]);
+  const [_, setItems] = useState<any[]>([]);
 
   const [newItemCategory, setNewItemCategory] = useState('');
   const [newItemValue, setNewItemValue] = useState('');
@@ -20,11 +20,6 @@ const Form = () => {
   function typeChange(e: any) {
     if (e.target.id == 'entry') setNewItemType('Entrada');
     else setNewItemType('Saída');
-    console.log(newItemType);
-  }
-
-  const handleAddItem = (newItem: any) => {
-    setItems(i => [...i, newItem]);
   }
 
   function addItem() {
@@ -40,7 +35,7 @@ const Form = () => {
       })
     })
       .then(response => response.json())
-      .then(newItem => handleAddItem(newItem));
+      .then(newItem => setItems(i => [...i, newItem]));
   }
   
 

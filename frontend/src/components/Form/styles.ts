@@ -11,6 +11,7 @@ export const FormContainer = styled.div`
   background-color: white;
   width: 1040px;
   height: 80px;
+  box-shadow: 0px 3px 5px #00000040;
 `;
 
 export const InputContainer = styled.div`
