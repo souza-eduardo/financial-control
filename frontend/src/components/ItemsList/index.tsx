@@ -4,12 +4,13 @@ import * as C from './styles';
 const ItemsList = () => {
 
   const [items, setItems] = useState<any[]>([]);
+
   useEffect(() => {
     fetch('http://localhost:3000/items')
       .then(res => res.json())
       .then(item => setItems(item));
     
-  }, []);
+  }, [items]);
 
   return (
     <>
