@@ -1,7 +1,7 @@
 import { IconType } from 'react-icons';
 import * as C from './styles';
 
-const ResumeItem = (props: {title: string, Icon: IconType, value: number}) => {
+const ResumeItem = (props: {title: string, Icon: IconType, value: string}) => {
   return (
     <C.Container>
       <C.Header>

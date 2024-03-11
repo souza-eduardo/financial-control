@@ -13,12 +13,12 @@ const ItemsList = () => {
   }, [items]);
 
   function deleteItem(index: any) {
-    console.log(items[index].id);
     fetch('http://localhost:3000/items/' + items[index].id, {
       method: 'DELETE'
     })
       .then((res => res.json()));
   }
+
   return (
     <>
       {items.map((item, index) => (
