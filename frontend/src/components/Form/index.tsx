@@ -42,21 +42,23 @@ const Form = () => {
   return (
     <C.FormContainer>
         <C.InputContainer>
-          <label htmlFor="category">Categoria</label>
+          <label htmlFor="category" className='category'>Categoria</label>
           <C.Input type='text' id='category' onChange={(e) => categoryChange(e)} />
         </C.InputContainer>
 
         <C.InputContainer>
-          <label htmlFor="value">Valor</label>
+          <label htmlFor="value" className='value'>Valor</label>
           <C.Input type='text' id='value' onChange={(e) => valueChange(e)} />
         </C.InputContainer>
         
-        <C.RadioButton type='radio' id='entry' onChange={(e) => typeChange(e)} />
-        <label htmlFor="entry">Entrada</label>
+        <C.InputContainer>
+          <C.RadioButton type='radio' id='entry' onChange={(e) => typeChange(e)} />
+          <label htmlFor="entry">Entrada</label>
+          
+          <C.RadioButton type='radio' id='exit' onChange={(e) => typeChange(e)} />
+          <label htmlFor="exit">Saída</label>
+        </C.InputContainer>
 
-        <C.RadioButton type='radio' id='exit' onChange={(e) => typeChange(e)} />
-        <label htmlFor="exit">Saída</label>
-        
         <C.SubmitButton type='submit' onClick={addItem}>Adicionar</C.SubmitButton>
     </C.FormContainer>
   )
