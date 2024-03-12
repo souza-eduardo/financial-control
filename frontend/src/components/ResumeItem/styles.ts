@@ -12,7 +12,7 @@ export const Container = styled.div`
   box-shadow: 0px 3px 8px #00000050;
 
   @media screen and (max-width: 768px) {
-    width: 35px;
+    width: 50px;
     height: 15px;
   }
 `;

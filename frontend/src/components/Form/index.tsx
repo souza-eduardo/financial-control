@@ -51,11 +51,11 @@ const Form = () => {
           <C.Input type='text' id='value' onChange={(e) => valueChange(e)} />
         </C.InputContainer>
         
-        <C.InputContainer>
-          <C.RadioButton type='radio' id='entry' onChange={(e) => typeChange(e)} />
+        <C.InputContainer style={{flexDirection: 'row'}}>
+          <C.RadioButton type='radio' id='entry' name='type' onChange={(e) => typeChange(e)} />
           <label htmlFor="entry">Entrada</label>
           
-          <C.RadioButton type='radio' id='exit' onChange={(e) => typeChange(e)} />
+          <C.RadioButton type='radio' id='exit' name='type' onChange={(e) => typeChange(e)} />
           <label htmlFor="exit">Saída</label>
         </C.InputContainer>
 

@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 import * as C from './styles';
 import { MdDelete } from "react-icons/md";
+import {
+  FaRegArrowAltCircleUp,
+  FaRegArrowAltCircleDown
+} from "react-icons/fa";
 
 const ItemsList = () => {
 
@@ -22,14 +26,14 @@ const ItemsList = () => {
   return (
     <>
       {items.map((item, index) => (
-        <C.Container key={index}>
+        <C.ItemContainer key={index}>
           <li className='category'>{item.category}</li>
           <li>R$ {item.value}</li>
-          <li>{item.type}</li>
+          <li>{item.type === 'Entrada' ? <FaRegArrowAltCircleUp /> : <FaRegArrowAltCircleDown />} {item.type}</li>
           <C.DeleteButton onClick={() => deleteItem(index)}>
             <MdDelete />
           </C.DeleteButton>
-        </C.Container>
+        </C.ItemContainer>
       ))}
     </>
   )

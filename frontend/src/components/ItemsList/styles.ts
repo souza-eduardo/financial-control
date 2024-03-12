@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const ItemContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
   background-color: white;
+  font-size: 1.2rem;
   margin-top: 15px;
   width: 1040px;
   padding: 0px 10px;
@@ -12,27 +12,22 @@ export const Container = styled.div`
   height: 50px;
   box-shadow: 0px 3px 5px #00000040;
 
-  .category {
-    background-color: lightsalmon;
-    width:fit-content;
-    padding: 5px 10px;
-    border-radius: 5px;  
-  }
-
   li {
     list-style: none;
+    flex: 1;
   }
 
-  @media screen and (max-width: 768px) {
-    max-width: 90%;
-    height: 180px;
-    font-size: 1.2rem;
+  @media screen and (max-width: 1024px) {
     flex-direction: column;
+    width: 90%;
+    height: 200px;
+    padding: 10px 0px;
+    font-size: 1.2rem;
   }
 `;
 
 export const DeleteButton = styled.button`
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -41,7 +36,7 @@ export const DeleteButton = styled.button`
     color: red;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     background-color: red;
     color: white;
     padding: 5px 10px;

@@ -6,9 +6,9 @@ export const Container = styled.div`
   gap: 20px;
   margin-top: -40px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     max-width: 100%;
     margin-top: -20px;
-    gap: 15px;
+    gap: 2px;
   }
 `;
