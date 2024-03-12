@@ -24,18 +24,18 @@ const Form = () => {
 
   function addItem() {
     fetch('http://localhost:3000/items', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        category: newItemCategory,
-        value: newItemValue,
-        type: newItemType
-      })
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      category: newItemCategory,
+      value: newItemValue,
+      type: newItemType
     })
-      .then(response => response.json())
-      .then(newItem => setItems(i => [...i, newItem]));
+  })
+    .then(response => response.json())
+    .then(newItem => setItems(i => [...i, newItem]));
   }
   
 

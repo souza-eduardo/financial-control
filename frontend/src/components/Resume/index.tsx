@@ -35,7 +35,7 @@ const Resume = () => {
 
       setEntries(e => e + totalEntries);
       setExits(e => e + totalExits);
-      setTotal(totalEntries - totalExits);
+      setTotal(_t => totalEntries - totalExits);
     }
   }, [loading, items]);
 

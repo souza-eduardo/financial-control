@@ -23,12 +23,17 @@ const ItemsList = () => {
       .then((res => res.json()));
   }
 
+  const real = Intl.NumberFormat('pt-BR', { // formata o valor para o Real Brasileiro
+    style: 'currency',
+    currency: 'BRL'
+  });
+
   return (
     <>
       {items.map((item, index) => (
         <C.ItemContainer key={index}>
           <li className='category'>{item.category}</li>
-          <li>R$ {item.value}</li>
+          <li>{real.format(item.value)}</li>
           <li>{item.type === 'Entrada' ? <FaRegArrowAltCircleUp /> : <FaRegArrowAltCircleDown />} {item.type}</li>
           <C.DeleteButton onClick={() => deleteItem(index)}>
             <MdDelete />
