@@ -34,7 +34,7 @@ const ItemsList = () => {
         <C.ItemContainer key={index}>
           <li className='category'>{item.category}</li>
           <li>{real.format(item.value)}</li>
-          <li>{item.type === 'Entrada' ? <FaRegArrowAltCircleUp /> : <FaRegArrowAltCircleDown />} {item.type}</li>
+          <li>{item.type === 'Entrada' ? <FaRegArrowAltCircleUp color='green' /> : <FaRegArrowAltCircleDown color='red' />} {item.type}</li>
           <C.DeleteButton onClick={() => deleteItem(index)}>
             <MdDelete />
           </C.DeleteButton>

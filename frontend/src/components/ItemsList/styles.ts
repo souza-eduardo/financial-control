@@ -20,7 +20,7 @@ export const ItemContainer = styled.div`
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     width: 90%;
-    height: 200px;
+    height: 165px;
     padding: 10px 0px;
     font-size: 1.2rem;
   }

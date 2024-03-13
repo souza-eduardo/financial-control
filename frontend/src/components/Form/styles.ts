@@ -33,14 +33,14 @@ export const InputContainer = styled.div`
     }
 
     label.value {
-      margin-right: 57px;
+      margin-right: 56px;
     }
   }
 `;
 
 export const Input = styled.input`
-  height: 20px;
-  width: 200px;
+  height: 25px;
+  width: 220px;
   outline: none;
 `;  
 

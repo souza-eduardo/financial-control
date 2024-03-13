@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import * as C from './styles';
 
-const Form = () => {
+interface FormProps {
+  addItem: (newItem: any) => void;
+}
 
-  const [_, setItems] = useState<any[]>([]);
+const Form = ({addItem}: FormProps) => {
 
   const [newItemCategory, setNewItemCategory] = useState('');
   const [newItemValue, setNewItemValue] = useState('');
@@ -22,7 +24,7 @@ const Form = () => {
     else setNewItemType('Saída');
   }
 
-  function addItem() {
+  function handleSubmit() {
     fetch('http://localhost:3000/items', {
     method: 'POST',
     headers: {
@@ -35,7 +37,7 @@ const Form = () => {
     })
   })
     .then(response => response.json())
-    .then(newItem => setItems(i => [...i, newItem]));
+    .then(newItem => addItem(newItem));
   }
   
 
@@ -59,7 +61,7 @@ const Form = () => {
           <label htmlFor="exit">Saída</label>
         </C.InputContainer>
 
-        <C.SubmitButton type='submit' onClick={addItem}>Adicionar</C.SubmitButton>
+        <C.SubmitButton type='submit' onClick={handleSubmit}>Adicionar</C.SubmitButton>
     </C.FormContainer>
   )
 }
