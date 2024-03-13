@@ -35,7 +35,7 @@ export const Header = styled.header`
   }
 
   @media screen and (max-width: 768px) {
-    margin: -10px 0px 0px -32px;
+    margin: -20px 0px 10px -25px;
     width: 100px;
     height: 50px;
     font-size: 1rem;

@@ -12,28 +12,6 @@ interface ResumeProps {
 
 const Resume = ({ items }: ResumeProps) => {
 
-  /* useEffect(() => {
-   fetch('http://localhost:3000/items')
-     .then(res => res.json())
-     .then(item => setItems(item))
-     .finally(() => setLoading(false));
- }, []); */
-
-  /* useEffect(() => {
-    if(!loading) {
-    
-      let totalEntries = 0;
-      let totalExits = 0;
-      items.map((item) => {
-        if (item.type === 'Entrada') totalEntries += item.value;
-        else totalExits += item.value;
-      });
-
-      setEntries(e => e + totalEntries);
-      setExits(e => e + totalExits);
-      setTotal(_t => totalEntries - totalExits);
-    }
-  }, [loading, items]); */
   let totalEntries = 0;
   let totalExits = 0;
 
