@@ -23,7 +23,7 @@ export class ItemController {
       const items = await itemRepository.find();
       return res.json(items);
     } catch (err) {
-      return res.status(400).json({ message: 'Items not found' });
+      return res.status(400).json({ message: 'Items not found', err });
     }
   }
 
